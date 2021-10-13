@@ -88,7 +88,7 @@ class Form extends Component {
         <button
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick}
-          className="btnSave" data-testid="save-button" type="submit">Salvar
+          className="btnSave" data-testid="save-button">Salvar
         </button>
       </form>
     );
@@ -107,5 +107,6 @@ Form.propTypes = {
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
-}
+};
+
 export default Form;
