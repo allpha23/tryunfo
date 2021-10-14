@@ -20,8 +20,7 @@ class App extends React.Component {
     };
 
     this.onInputChange = this.onInputChange.bind(this);
-
-  };
+  }
 
   onInputChange({ target }) {
     const { name } = target;

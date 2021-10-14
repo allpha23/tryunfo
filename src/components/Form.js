@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Form extends Component {
@@ -12,7 +12,7 @@ class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      hasTrunfo,
+      // hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -23,9 +23,10 @@ class Form extends Component {
         <label htmlFor="cardName">
           Nome
           <input
-          value={ cardName }
-          onChange={ onInputChange }
-          id="cardName" data-testid="name-input" type="text" name="cardName"
+            value={ cardName }
+            onChange={ onInputChange }
+            data-testid="name-input"
+            id="cardName" type="text" name="cardName"
           />
         </label>
         <label htmlFor="cardDescription">
@@ -33,7 +34,8 @@ class Form extends Component {
           <textarea
             value={ cardDescription }
             onChange={ onInputChange }
-            id="cardDescription" data-testid="description-input" name="cardDescription"
+            data-testid="description-input"
+            id="cardDescription" name="cardDescription"
           />
         </label>
         <label htmlFor="cardAttr1">
@@ -41,7 +43,8 @@ class Form extends Component {
           <input
             value={ cardAttr1 }
             onChange={ onInputChange }
-            id="cardAttr1" data-testid="attr1-input" type="number" name="cardAttr1"
+            data-testid="attr1-input"
+            id="cardAttr1" type="number" name="cardAttr1"
           />
         </label>
         <label htmlFor="cardAttr2">
@@ -49,7 +52,8 @@ class Form extends Component {
           <input
             value={ cardAttr2 }
             onChange={ onInputChange }
-            id="cardAttr2" data-testid="attr2-input" type="number" name="cardAttr2"
+            data-testid="attr2-input"
+            id="cardAttr2" type="number" name="cardAttr2"
           />
         </label>
         <label htmlFor="cardAttr3">
@@ -57,7 +61,8 @@ class Form extends Component {
           <input
             value={ cardAttr3 }
             onChange={ onInputChange }
-            id="cardAttr3" data-testid="attr3-input" type="number" name="cardAttr3"
+            data-testid="attr3-input"
+            id="cardAttr3" type="number" name="cardAttr3"
           />
         </label>
         <label htmlFor="cardImage">
@@ -65,7 +70,8 @@ class Form extends Component {
           <input
             value={ cardImage }
             onChange={ onInputChange }
-            id="cardImage" data-testid="image-input" type="text" name="cardImage"
+            data-testid="image-input"
+            id="cardImage" type="text" name="cardImage"
           />
         </label>
         <label htmlFor="cardRare">
@@ -73,7 +79,8 @@ class Form extends Component {
           <select
             value={ cardRare }
             onChange={ onInputChange }
-            id="cardRare" data-testid="rare-input" name="cardRare">
+            data-testid="rare-input"
+            id="cardRare" name="cardRare">
               <option value="normal">normal</option>
               <option value="raro">raro</option>
               <option value="muito raro">muito raro</option>
@@ -83,13 +90,17 @@ class Form extends Component {
           <input
             checked={ cardTrunfo }
             onChange={ onInputChange }
-            id="cardTrunfo" data-testid="trunfo-input" type="checkbox" name="cardTrunfo"
+            data-testid="trunfo-input"
+            id="cardTrunfo" type="checkbox" name="cardTrunfo"
           />
         </label>
         <button
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
-          className="btnSave" data-testid="save-button">Salvar
+          data-testid="save-button"
+          type="button"
+          className="btnSave">
+          Salvar
         </button>
       </form>
     );
