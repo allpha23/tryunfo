@@ -11,6 +11,7 @@ class App extends React.Component {
 
     this.state = {
       ...emptyStates(),
+      hasTrunfo: false,
       cardDeck: [],
     };
 
@@ -28,9 +29,10 @@ class App extends React.Component {
 
   onSaveButtonClick(e) {
     e.preventDefault();
-    const { cardDeck } = this.state;
+    const { cardDeck, cardTrunfo } = this.state;
     cardDeck.push({ ...this.state });
-    this.setState({ ...emptyStates() });
+    if (cardTrunfo === true) this.setState({ ...emptyStates(), hasTrunfo: true });
+    else this.setState({ ...emptyStates(), hasTrunfo: false });
   }
 
   test() {
