@@ -3,26 +3,20 @@ import Form from './components/Form';
 import Card from './components/Card';
 import checkButtonAttr from './components/checkButtonAttr';
 import checkButtonValue from './components/checkButtonValue';
+import emptyStates from './components/emptyStates';
 
 class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
-      cardImage: '',
-      cardRare: '',
-      cardTrunfo: false,
-      hasTrunfo: false,
-      isSaveButtonDisabled: true,
+      ...emptyStates(),
+      cardDeck: [],
     };
 
     this.onInputChange = this.onInputChange.bind(this);
     this.test = this.test.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
   onInputChange({ target }) {
@@ -30,6 +24,13 @@ class App extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
     this.setState({ [name]: value }, () => this.test());
+  }
+
+  onSaveButtonClick(e) {
+    e.preventDefault();
+    const { cardDeck } = this.state;
+    cardDeck.push({ ...this.state });
+    this.setState({ ...emptyStates() });
   }
 
   test() {
@@ -54,7 +55,11 @@ class App extends React.Component {
     return (
       <div>
         <h1>Tryunfo</h1>
-        <Form { ...this.state } onInputChange={ this.onInputChange } />
+        <Form
+          { ...this.state }
+          onInputChange={ this.onInputChange }
+          onSaveButtonClick={ this.onSaveButtonClick }
+        />
         <Card { ...this.state } />
       </div>
     );
