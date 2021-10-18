@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  border: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -15,4 +16,41 @@ code {
 .form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 50%;
+  padding-top: 40px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+.cardCreate {
+  display: flex;
+  justify-content: center;
+}
+
+.cardApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 50%;
+  background-color: #023031;
+}
+
+.cardApp h1 {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.cardBody {
+  display: flex;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.card p {
+  font-size: 10px;
 }

@@ -20,109 +20,114 @@ class Form extends Component {
 
     return (
       <form className="form">
-        <label htmlFor="cardName">
-          Nome
-          <input
-            value={ cardName }
-            onChange={ onInputChange }
-            data-testid="name-input"
-            type="text"
-            id="cardName"
-            name="cardName"
-          />
-        </label>
-        <label htmlFor="cardDescription">
-          Descrição
-          <textarea
-            value={ cardDescription }
-            onChange={ onInputChange }
-            data-testid="description-input"
-            id="cardDescription"
-            name="cardDescription"
-          />
-        </label>
-        <label htmlFor="cardAttr1">
-          Attr01
-          <input
-            value={ cardAttr1 }
-            onChange={ onInputChange }
-            data-testid="attr1-input"
-            id="cardAttr1"
-            type="number"
-            name="cardAttr1"
-          />
-        </label>
-        <label htmlFor="cardAttr2">
-          Attr02
-          <input
-            value={ cardAttr2 }
-            onChange={ onInputChange }
-            data-testid="attr2-input"
-            id="cardAttr2"
-            type="number"
-            name="cardAttr2"
-          />
-        </label>
-        <label htmlFor="cardAttr3">
-          Attr03
-          <input
-            value={ cardAttr3 }
-            onChange={ onInputChange }
-            data-testid="attr3-input"
-            id="cardAttr3"
-            type="number"
-            name="cardAttr3"
-          />
-        </label>
-        <label htmlFor="cardImage">
-          Imagem
-          <input
-            value={ cardImage }
-            onChange={ onInputChange }
-            data-testid="image-input"
-            id="cardImage"
-            type="text"
-            name="cardImage"
-          />
-        </label>
-        <label htmlFor="cardRare">
-          Raridade
-          <select
-            value={ cardRare }
-            onChange={ onInputChange }
-            data-testid="rare-input"
-            id="cardRare"
-            name="cardRare"
+        <div>
+          <header>
+            <h1>Adicionar nova carta</h1>
+          </header>
+          <label htmlFor="cardName">
+            Nome
+            <input
+              value={ cardName }
+              onChange={ onInputChange }
+              data-testid="name-input"
+              type="text"
+              id="cardName"
+              name="cardName"
+            />
+          </label>
+          <label htmlFor="cardDescription">
+            Descrição
+            <textarea
+              value={ cardDescription }
+              onChange={ onInputChange }
+              data-testid="description-input"
+              id="cardDescription"
+              name="cardDescription"
+            />
+          </label>
+          <label htmlFor="cardAttr1">
+            Attr01
+            <input
+              value={ cardAttr1 }
+              onChange={ onInputChange }
+              data-testid="attr1-input"
+              id="cardAttr1"
+              type="number"
+              name="cardAttr1"
+            />
+          </label>
+          <label htmlFor="cardAttr2">
+            Attr02
+            <input
+              value={ cardAttr2 }
+              onChange={ onInputChange }
+              data-testid="attr2-input"
+              id="cardAttr2"
+              type="number"
+              name="cardAttr2"
+            />
+          </label>
+          <label htmlFor="cardAttr3">
+            Attr03
+            <input
+              value={ cardAttr3 }
+              onChange={ onInputChange }
+              data-testid="attr3-input"
+              id="cardAttr3"
+              type="number"
+              name="cardAttr3"
+            />
+          </label>
+          <label htmlFor="cardImage">
+            Imagem
+            <input
+              value={ cardImage }
+              onChange={ onInputChange }
+              data-testid="image-input"
+              id="cardImage"
+              type="text"
+              name="cardImage"
+            />
+          </label>
+          <label htmlFor="cardRare">
+            Raridade
+            <select
+              value={ cardRare }
+              onChange={ onInputChange }
+              data-testid="rare-input"
+              id="cardRare"
+              name="cardRare"
+            >
+              <option value="normal">normal</option>
+              <option value="raro">raro</option>
+              <option value="muito raro">muito raro</option>
+            </select>
+          </label>
+          <label htmlFor="cardTrunfo">
+            {
+              hasTrunfo ? <p>Você já tem um Super Trunfo em seu baralho</p>
+                : (
+                  <input
+                    checked={ cardTrunfo }
+                    onChange={ onInputChange }
+                    data-testid="trunfo-input"
+                    id="cardTrunfo"
+                    type="checkbox"
+                    name="cardTrunfo"
+                  />
+                )
+            }
+          </label>
+          <button
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+            data-testid="save-button"
+            type="button"
+            className="btnSave"
           >
-            <option value="normal">normal</option>
-            <option value="raro">raro</option>
-            <option value="muito raro">muito raro</option>
-          </select>
-        </label>
-        <label htmlFor="cardTrunfo">
-          {
-            hasTrunfo ? <p>Você já tem um Super Trunfo em seu baralho</p>
-              : (
-                <input
-                  checked={ cardTrunfo }
-                  onChange={ onInputChange }
-                  data-testid="trunfo-input"
-                  id="cardTrunfo"
-                  type="checkbox"
-                  name="cardTrunfo"
-                />
-              )
-          }
-        </label>
-        <button
-          disabled={ isSaveButtonDisabled }
-          onClick={ onSaveButtonClick }
-          data-testid="save-button"
-          type="button"
-          className="btnSave"
-        >
-          Salvar
-        </button>
+            Salvar
+          </button>
+        </div>
       </form>
     );
   }

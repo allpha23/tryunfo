@@ -55,14 +55,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Tryunfo</h1>
+      <div className="cardCreate">
         <Form
           { ...this.state }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
-        <Card { ...this.state } />
+        <div className="cardApp">
+          <header>
+            <h1>Pré-visualização</h1>
+          </header>
+          <div className="cardBody">
+            <Card { ...this.state } />
+          </div>
+        </div>
       </div>
     );
   }
