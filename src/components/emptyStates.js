@@ -8,7 +8,6 @@ function emptyStates() {
     cardImage: '',
     cardRare: 'normal',
     cardTrunfo: false,
-    hasTrunfo: false,
     isSaveButtonDisabled: true,
   };
 
