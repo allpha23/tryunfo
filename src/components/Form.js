@@ -20,7 +20,7 @@ class Form extends Component {
 
     return (
       <form className="form">
-        <div>
+        <div className="formCard">
           <header>
             <h1>Adicionar nova carta</h1>
           </header>

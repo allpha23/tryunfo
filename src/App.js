@@ -18,6 +18,7 @@ class App extends React.Component {
     this.onInputChange = this.onInputChange.bind(this);
     this.test = this.test.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.listCards = this.listCards.bind(this);
   }
 
   onInputChange({ target }) {
@@ -53,20 +54,35 @@ class App extends React.Component {
     else this.setState({ isSaveButtonDisabled: true });
   }
 
+  listCards() {
+    const { cardDeck } = this.state;
+    return cardDeck.map((input) => <Card key={ input.cardName } { ...input } />);
+  }
+
   render() {
     return (
       <div className="cardCreate">
-        <Form
-          { ...this.state }
-          onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.onSaveButtonClick }
-        />
+        <div className="formApp">
+          <Form
+            { ...this.state }
+            onInputChange={ this.onInputChange }
+            onSaveButtonClick={ this.onSaveButtonClick }
+          />
+        </div>
         <div className="cardApp">
           <header>
             <h1>Pré-visualização</h1>
           </header>
           <div className="cardBody">
             <Card { ...this.state } />
+          </div>
+        </div>
+        <div className="deck">
+          <header>
+            <h1>Lista de cartas</h1>
+          </header>
+          <div className="cardBody">
+            { this.listCards() }
           </div>
         </div>
       </div>

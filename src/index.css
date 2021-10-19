@@ -17,8 +17,6 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
-  padding-top: 40px;
 }
 
 .form label {
@@ -26,31 +24,62 @@ code {
   flex-direction: column;
   padding-bottom: 20px;
 }
+
+.formApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 10px solid #023031;
+  width: 50%;
+}
+
 .cardCreate {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .cardApp {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #023031;
   height: 100vh;
   width: 50%;
-  background-color: #023031;
 }
 
 .cardApp h1 {
-  padding-top: 40px;
   padding-bottom: 20px;
 }
 
 .cardBody {
   display: flex;
+}
+
+.card {
   border-radius: 10px;
   background-color: white;
+  margin-right: 20px;
+}
+
+.card img {
+  height: 250px;
+  width: 250px;
+}
+
+.attr {
+  position: static;
 }
 
 .card p {
-  font-size: 10px;
+  font-size: 12px;
+  width: 250px;
+}
+
+.deck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #023031;
+  height: 100vh;
+  width: 100%;
 }
